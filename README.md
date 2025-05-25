@@ -1,1 +1,3 @@
-<!-- GitAds-Verify: 87MML54D8NU2SLWUFY51OCSX97MAWATL -->
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=arnabnandy7/kafka@github)](https://gitads.dev/v1/ad-track?source=arnabnandy7/kafka@github)
+
