@@ -40,7 +40,8 @@ public class ApiUtilsTest {
 
         final IllegalArgumentException e = assertThrows(
             IllegalArgumentException.class,
-            () -> validateMillisecondDuration(null, nullDurationPrefix)
+            () -> validateMillisecondDuration(null, nullDurationPrefix),
+            "Expected exception when null passed to duration."
         );
         assertTrue(e.getMessage().contains(nullDurationPrefix));
     }
@@ -52,7 +53,8 @@ public class ApiUtilsTest {
 
         final IllegalArgumentException e = assertThrows(
             IllegalArgumentException.class,
-            () -> validateMillisecondDuration(maxDurationInDays, maxDurationPrefix)
+            () -> validateMillisecondDuration(maxDurationInDays, maxDurationPrefix),
+            "Expected exception when maximum days passed for duration, because of long overflow"
         );
         assertTrue(e.getMessage().contains(maxDurationPrefix));
     }
@@ -63,7 +65,8 @@ public class ApiUtilsTest {
 
         final IllegalArgumentException e = assertThrows(
             IllegalArgumentException.class,
-            () -> validateMillisecondInstant(null, nullInstantPrefix)
+            () -> validateMillisecondInstant(null, nullInstantPrefix),
+            "Expected exception when null value passed for instant."
         );
         assertTrue(e.getMessage().contains(nullInstantPrefix));
     }
@@ -74,7 +77,8 @@ public class ApiUtilsTest {
 
         final IllegalArgumentException e = assertThrows(
             IllegalArgumentException.class,
-            () -> validateMillisecondInstant(Instant.MAX, maxInstantPrefix)
+            () -> validateMillisecondInstant(Instant.MAX, maxInstantPrefix),
+            "Expected exception when maximum value passed for instant, because of long overflow."
         );
         assertTrue(e.getMessage().contains(maxInstantPrefix));
     }
